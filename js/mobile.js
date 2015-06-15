@@ -7,10 +7,10 @@
 }(this, function() {
 	var _isShow = false;
 	var $tag, $aboutme, $friends;
-	//构造函数
+
+	// 构造函数
 	function Mobile(opts){
-		//构造函数需要的参数
-		this.ctn = opts.ctn;
+		this.ctn = opts.ctn;//构造函数需要的参数
 		//构造四步
 		this.init();
 		this.renderDOM();
