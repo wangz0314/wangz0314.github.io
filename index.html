@@ -96,7 +96,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/29/hello-world/" data-id="ciq0n77we0002gsc0tarjx64y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/29/hello-world/" data-id="ciq0sfntp0000zgc0mxq3o8im" class="article-share-link">Share</a>
       
       
     </footer>
@@ -128,9 +128,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##Linux 内存寻址</p>
-<h3 id="u4E00_u3001_u7269_u7406_u5730_u5740_u3001_u7EBF_u6027_u5730_u5740_u3001_u865A_u62DF_u5730_u5740"><a href="#u4E00_u3001_u7269_u7406_u5730_u5740_u3001_u7EBF_u6027_u5730_u5740_u3001_u865A_u62DF_u5730_u5740" class="headerlink" title="一、物理地址、线性地址、虚拟地址"></a>一、物理地址、线性地址、虚拟地址</h3><p>####1. <strong>基本概念</strong></p>
-<ul>
+        <h3 id="u4E00_u3001_u7269_u7406_u5730_u5740_u3001_u7EBF_u6027_u5730_u5740_u3001_u865A_u62DF_u5730_u5740"><a href="#u4E00_u3001_u7269_u7406_u5730_u5740_u3001_u7EBF_u6027_u5730_u5740_u3001_u865A_u62DF_u5730_u5740" class="headerlink" title="一、物理地址、线性地址、虚拟地址"></a>一、物理地址、线性地址、虚拟地址</h3><h4 id="1-__u57FA_u672C_u6982_u5FF5"><a href="#1-__u57FA_u672C_u6982_u5FF5" class="headerlink" title="1. <strong>基本概念</strong>"></a>1. <strong>基本概念</strong></h4><ul>
 <li><strong>物理地址</strong><br>物理内存条提供的内存空间定义为<strong>物理内存空间</strong>，其中每个内存单元的实际地址就是<strong>物理地址</strong>。</li>
 <li><strong>虚拟地址</strong></li>
 </ul>
@@ -138,130 +136,16 @@
 <ul>
 <li><strong>线性地址</strong><br><strong>线性地址空间</strong>是指一段连续的、不分段的，范围从0~4GB的地址空间，一个<strong>线性地址</strong>就是线性空间中的一个绝对地址。</li>
 </ul>
-<p>####2. <strong>三者之间的转换</strong><br>转换流程：</p>
-<p><strong>MMU</strong> 内存管理单元，其功能是将 虚拟地址 映射为 物理地址，即进行地址转换，如图1所示。<br>MMU中包含两个部件，一个是分段机制、一个是分页机制。分段机制将一个虚拟地址转换为线性地址；分页机制将一个线性地址转换为物理地址。</p>
-<h3 id="u4E8C_u3001_u6BB5_u673A_u5236"><a href="#u4E8C_u3001_u6BB5_u673A_u5236" class="headerlink" title="二、段机制"></a>二、段机制</h3><p>段是虚拟地址空间的基本单位，段机制必须将一个虚拟地址空间的地址转换为线性地址空间的一个线性地址。</p>
-<p>####1. <strong>段描述符表（段表）</strong><br>其中的表项叫做<strong>段描述符</strong>。<br>段描述符表有三种：<strong>全局描述符表（Global Descriptor Table，GDT）、中断描述符表（Interrupt Descriptor<br>Table，IDT）、局部描述符表（Local Descriptor Table，LDT）</strong>。<br>Intel设计了专门的寄存器GDTR、LDTR、IDTR，存储段描述符表的基地址以及表的长度界限。<br>在保护模式下，段寄存器也叫选择符（6个段寄存器，cs、ss、ds、es、fs、gs），其结构如图2所示：</p>
-<p>由上图可以看出，选择符有三个域。</p>
-<ul>
-<li><strong>索引域</strong>：段描述符在描述符表中的位置。</li>
-<li><strong>选择域（TI）</strong>：若TI=0，则从GDT中选择相应的段描述符；若TI=1，则从LDT中选择相应的段描述符。</li>
-<li><p><strong>RPL</strong>：表示请求者的特权级。<br>保护模式提供4个特权级，用0~3表示，Linux中只是用了其中最高和最低两个，即0表示最高特权级，对应内核态；3表示最低特权级，对应用户态。<br>####2. <strong>段描述符</strong><br>就是描述段的属性的一个<strong>8字节</strong>的存储单元。包含三个方面的内容：</p>
-<ul>
-<li><strong>段的基地址（Base Address）</strong>：在线性地址空间中段的起始地址。 <strong>（32位）</strong></li>
-<li><strong>段的界限（Limit）</strong>：在虚拟地址空间中，段内可以使用的最大偏移量。  <strong>（20位）</strong></li>
-<li><strong>段的保护属性（Attribute）</strong>：表示段的特性。eg:是否可读、可写，是否可执行，段的特权级等。  <strong>（12位）</strong><br>其中包含<strong>存取权字节（8位）</strong>，其格式如图3所示：</li>
-</ul>
-</li>
-<li><p><strong>P</strong>：存在位，表示这个段是否在内存中。若在内存，则P=1；否则，P=0。</p>
-</li>
-<li><strong>DPL</strong>：描述符特权级。占两位，其值为0~3，用来确定该段的特权级即保护等级。</li>
-<li><strong>S</strong>：表示这个段是系统段还是用户段。若S=0，则是系统段；若S=1，则是用户程序的代码段、数据段或堆栈段。</li>
-<li><p><strong>类型</strong>：<br>第三位<strong>E位</strong>，表示端是否可执行。若E=0，为数据段描述符，此时的第二位是<strong>ED位</strong>。<br>若ED=0，表示向地址增大的方向扩展；若ED=1，则表示向地址减少的方向扩展。<strong>（存有疑惑）</strong><br>第一位<strong>W位</strong>，是可写位。若W=0，数据段不能写；若W=1，数据段可写入。<br>####3. <strong>地址转换及保护</strong></p>
-<ul>
-<li>地址转换流程，如图4所示：</li>
-</ul>
-</li>
-<li><p>先检查段选择符的TI字段，以确定段描述符在哪一个描述符表中（GDT or LDT）从对应的寄存器中（GDTR or<br>LDTR）中得到段描述符表的线性基地址。</p>
-</li>
-<li>根据段选择符的索引字段计算段描述符的地址，索引字段乘以8（一个段描述符的大小），再加上GDTR或LDTR中的段描述符表的基址，得到该段描述符的地址。</li>
-<li>将逻辑地址的偏移量与段描述符中的段基址相加，得到该逻辑地址的线性地址。<ul>
-<li>保护</li>
-</ul>
-</li>
-<li>对段先进性界限检查，若存在问题，则产生异常</li>
-<li>根据段的保护属性检查访问者是否具有访问权，若没有，则产生异常。<br>####4. Linux中的段<br>一个虚拟地址最终会通过“段基地址+偏移量”的方式转化为一个线性地址。但是由于绝大数硬件平台都不支持段机制，只支持分页机制，所以为了让Linux具有更好的移植性，需要去掉段机制而只是用分页机制。<ul>
-<li><strong>那Linux又是怎么实现的呢？</strong><br>Linux的设计人员让段的基地址为0，而段的界限为4GB，这时任意给出一个偏移量，有“0+偏移量=线性地址”，也就是说“偏移量=线性地址”；另外，由于段机制规定“偏移量&lt;4GB”，所以偏移量的范围恰好是线性地址空间的范围，也就是说虚拟地址直接映射到了线性地址，即就是说<strong>“虚拟地址和线性地址指的是同一地址”</strong>。</li>
-<li>80x86的段机制还规定，必须为代码段和数据段创建不同的段，所以<strong>Linux必须创建4个基地址为0，段界限为4GB的段描述符</strong>：</li>
-</ul>
-</li>
-<li>内核代码段</li>
-<li>内核数据段</li>
-<li>用户代码段</li>
-<li>用户数据段<h3 id="u4E09_u3001_u5206_u9875_u673A_u5236"><a href="#u4E09_u3001_u5206_u9875_u673A_u5236" class="headerlink" title="三、分页机制"></a>三、分页机制</h3>####1.控制寄存器<br>介绍分页机制之前，先介绍几个控制寄存器，如图5所示：</li>
-</ul>
-<ul>
-<li>CR0<br>中包含额6个与定义标志。0位是保护允许位，用于启动保护模式。若PE=1，则保护模式启动；若PE=0，则处于实模式。31位是分页允许位，表示分页部件是否被允许工作。<br>由PG位和PE位定义的操作方式如下表：<br>|PG|PE|方式|<br>|:——–:|:——–:|:———-:|<br>|0|0|实模式，8080操作|<br>|0|1|保护模式，但不允许分页|<br>|1|0|出错|<br>|1|1|保护模式，允许分页|</li>
-<li>CR1 是未定义的控制寄存器，供将来的处理器使用。</li>
-<li>CR2 是缺页线性地址寄存器，保存最后一次出现缺页的全32位线性地址。</li>
-<li>CR3<br>是页目录基址寄存器，保存页目录的物理地址，页目录总是放在以4KB为单位的存储器边界上。因此，其地址的低12位总为0，即使协商内容，也不会被理会。<h4 id="2-_u9875_u4E0E_u9875_u8868"><a href="#2-_u9875_u4E0E_u9875_u8868" class="headerlink" title="2.页与页表"></a>2.页与页表</h4></li>
-<li>页、物理页面及页大小<ul>
-<li>为了效率，将<strong>线性地址空间</strong>划分成若干大小相等的片，称为<strong>页（Page）</strong>，给页加以编号，从开始。</li>
-<li>把<strong>物理地址空间</strong>分成与页大小相等的若干存储块，称为<strong>（物理）块</strong>或<strong>页面（Page Frame）</strong>，也同样加以编号。<br><strong><em>页的大小应该设置为多少？页过大或过小都会影响内存的使用率。从下面的内容可以看出，选择4KB大小既巧妙又高效</em></strong>。</li>
-</ul>
-</li>
-<li>页表<br>页表是把线性地址映射到物理地址的一种数据结构。<strong>页表是放在内存中的</strong>。页表中应当包含以下内容：<ul>
-<li>物理页面基地址：线性地址空间中的一个页装入内存口所对应的物理页面的起始地址。</li>
-<li>页的属性：表示页的特性。eg：是否在内存中，是否可被读出或写入。<br>由于页面的大小为4KB，它的物理页面基地址（32位）必定是4K的倍数，因此其地址低12位总是0，可以用这12位来存放页的属性。页表中每一项占4个字节就足够。<br>不过，4GB的线性空间可被划分为1M个4KB大小的页，每个页表项占4B，则1M个页表项需要占用4MB的连续空间，显然这是不现实的。我们可以采用两级页表来解决该问题</li>
-</ul>
-</li>
-<li>两级页表<br>所谓<strong>两级页表</strong>，就是对页表再进行分页。第一级称为页目录，其中存放页表信息。4MB的页再次分页，可以分为1K个页，每页的描述占用4B，页目录最多占用4KB，正好是一个页。示意图如图6所示：</li>
-</ul>
-<p>页目录共有1K个表项，于是，线性地址的最高10位用来表示一级索引。两级页表的第二集称之为页表，每个页表也包含1K个表项，所以线性地址的中间10位用来表示二级索引。最低12位表示页内偏移量，刚好能完成整表示一个页面。两级页表的线性地址结构如图7所示：</p>
-<h4 id="3-_u7EBF_u6027_u5730_u5740_u5230_u7269_u7406_u5730_u5740_u8F6C_u6362"><a href="#3-_u7EBF_u6027_u5730_u5740_u5230_u7269_u7406_u5730_u5740_u8F6C_u6362" class="headerlink" title="3.线性地址到物理地址转换"></a>3.线性地址到物理地址转换</h4><p><strong><em>当访问线性地址空间的一个操作单元时，如何将32位的线性地址通过分页机制转化为32位物理地址呢？</em></strong><br>过程如图8所示：</p>
-<ul>
-<li>1)使用<strong>32位线性地址</strong>的最高10位（页目录项索引），乘以4，再与CR3中的最高20位（页目录基址）相加，得到<strong>页目录项在内存的地址</strong>。</li>
-<li>2)从该地址读取32位页目录项，取其高20位，低12位置0，形成32位<strong>页表起始地址</strong>。</li>
-<li>3)使用<strong>32位线性地址</strong>的中间10位（页表索引），乘以4，与<strong>页表起始地址</strong>相加，得到<strong>页表项在内存的地址</strong>。</li>
-<li>4)从该地址读取32位页表项，取其高20位，与<strong>32位线性地址</strong>的低12位（页内偏移地址）结合，形成最终32位的<strong>页面物理地址</strong>。</li>
-</ul>
-<p><strong>常规分页示例：</strong><br><strong>例：</strong>假如内核已给一个正在运行的进程分配的线性地址空间范围是0x20000000到0x2003ffff。这个空间正好由64页组成。不关心这些页的页框物理地址，试分析其地址转换过程。<br>可以看出线性地址空间范围的两个地址的高10位是相同的，提取其高10位，得到0x80（128），即就是这两个地址的<strong>页目录字段</strong>指向页目录的第129项。该目录项中存储的是分配给该进程的页表的物理地址。如果没有分配其他的线性地址，则页目录的其余1023项为0。<br>而且线性地址空间的中间10位是从0~0x3f，即就是十进制的0~63。因此页表中只有前64项有意义，其余960个均为0。如图9所示：</p>
-<p>假设进程要读取线性地址0x20021406中的字节。处理过程如下：</p>
-<ul>
-<li>1）线性地址高10位为0x80，用于选择页目录的第129项，此目录项指向与该进程相关的页表。</li>
-<li>2）线性地址中间10位为0x21，用于选择页表的第34项，此页表项指向包含该线性地址内容的页。</li>
-<li>3）线性地址低12位为0x406，用于在页中读取偏移量为0x406中的字节。<h4 id="4-Linux__u4E2D_u7684_u5206_u9875_u673A_u5236"><a href="#4-Linux__u4E2D_u7684_u5206_u9875_u673A_u5236" class="headerlink" title="4.Linux 中的分页机制"></a>4.Linux 中的分页机制</h4><strong>I、64位系统中的分页：</strong><br>下表总结了一些Linux所支持64位平台的硬件分页系统的主要特征。<br>|平台名称|页大小|寻址使用的位数|分页级别数|线性地址分级|<br>|:————:|:————:|:————:|:————:|:————:|<br>|alpha|8KB|43|3|10+10+10+13|<br>|ia64|4KB|39|3|9+9+9+12|<br>|ppc64|4KB|41|3|10+10+9+12|<br>|sh64|4KB|41|3|10+10+9+12|<br>|x86_64|4KB|48|4|9+9+9+9+12|<br>Linux成功提出了一种通用分页模型，它适合于绝大多数所支持的硬件分页系统。<br><strong>II、Linux中的分页：</strong><br>两级页表对32位系统已经足够了，但64位系统需要更多数量的分页级别。Linux<br>采用了一种同时适用于32位和64位的普通分页模型。直到2.6.10版本，Linux<br>采用三级分页的模型。从2.6.11版本开始，采用了四级分页模型，如图10所示：</li>
-</ul>
-<p>包含：</p>
-<ul>
-<li>页全局目录（Page Global Directory）</li>
-<li>页上级目录（Page Upper Directory）</li>
-<li>页中间目录（Page MiddleDirectory）</li>
-<li>页表（Page Table）</li>
-</ul>
-<p>对于没有启用物理地址扩展的32位系统，两级页表已经足够了。Linux通过使“页上级目录”和“页中间目录”位全为0，从根本上取消了页上级目录和页中间目录字段。不过页上级目录和页中间目录在指针序列中的位置被保留，以便同样的代码在32位系统和64位系统下都能使用。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/29/内存寻址/" data-id="ciq0n77w00001gsc06p627zt3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-first-blog" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/06/10/first-blog/" class="article-date">
-  <time datetime="2015-06-09T17:42:45.000Z" itemprop="datePublished">2015-06-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+<h4 id="2-__u4E09_u8005_u4E4B_u95F4_u7684_u8F6C_u6362"><a href="#2-__u4E09_u8005_u4E4B_u95F4_u7684_u8F6C_u6362" class="headerlink" title="2. <strong>三者之间的转换</strong>"></a>2. <strong>三者之间的转换</strong></h4><p>转换流程：<br><img src="../pic/mem_addr/mem_addr_01.png" alt="MMU将虚拟地址转换为物理地址"><br><strong>MMU</strong> 内存管理单元，其功能是将 虚拟地址 映射为 物理地址，即进行地址转换，如图1所示。<br>MMU中包含两个部件，一个是分段机制、一个是分页机制。分段机制将一个虚拟地址转换为线性地址；分页机制将一个线性地址转换为物理地址。<br>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/10/first-blog/">first_blog</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#我的第一篇博客<br>成功了！你可以看到哦！<br>哈哈！！！</p>
-
+          <p class="article-more-link">
+            <a href="/2016/06/29/内存寻址/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/06/10/first-blog/" data-id="ciq0n77u00000gsc0ur7unxc5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/29/内存寻址/" data-id="ciq0sfnwc0001zgc0ken9guvr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -286,7 +170,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -303,10 +187,6 @@
         
           <li>
             <a href="/2016/06/29/内存寻址/">内存寻址</a>
-          </li>
-        
-          <li>
-            <a href="/2015/06/10/first-blog/">first_blog</a>
           </li>
         
       </ul>
