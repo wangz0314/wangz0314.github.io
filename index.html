@@ -293,7 +293,7 @@
 <ul>
 <li><strong>线性地址</strong><br><strong>线性地址空间</strong>是指一段连续的、不分段的，范围从0~4GB的地址空间，一个<strong>线性地址</strong>就是线性空间中的一个绝对地址。</li>
 </ul>
-<h4 id="2-__u4E09_u8005_u4E4B_u95F4_u7684_u8F6C_u6362"><a href="#2-__u4E09_u8005_u4E4B_u95F4_u7684_u8F6C_u6362" class="headerlink" title="2. <strong>三者之间的转换</strong>"></a>2. <strong>三者之间的转换</strong></h4><p>转换流程：<br><img src="../pic/mem_addr/mem_addr_01.png" alt="MMU将虚拟地址转换为物理地址"><br><strong>MMU</strong> 内存管理单元，其功能是将 虚拟地址 映射为 物理地址，即进行地址转换，如图1所示。<br>MMU中包含两个部件，一个是分段机制、一个是分页机制。分段机制将一个虚拟地址转换为线性地址；分页机制将一个线性地址转换为物理地址。<br>
+<h4 id="2-__u4E09_u8005_u4E4B_u95F4_u7684_u8F6C_u6362"><a href="#2-__u4E09_u8005_u4E4B_u95F4_u7684_u8F6C_u6362" class="headerlink" title="2. <strong>三者之间的转换</strong>"></a>2. <strong>三者之间的转换</strong></h4><p>转换流程：<br><img src="/source/pic/mem_addr/mem_addr_01.png" alt="MMU将虚拟地址转换为物理地址"><br><strong>MMU</strong> 内存管理单元，其功能是将 虚拟地址 映射为 物理地址，即进行地址转换，如图1所示。<br>MMU中包含两个部件，一个是分段机制、一个是分页机制。分段机制将一个虚拟地址转换为线性地址；分页机制将一个线性地址转换为物理地址。<br>
       
     </div>
     
