@@ -170,11 +170,11 @@
                 tQQ(this, options);
             })
         },
-/*        qZone: function(jq, options) {
+        qZone: function(jq, options) {
             return jq.each(function() {
                 qZone(this, options);
             })
-        },*/
+        },
         sinaWeibo: function(jq, options) {
             return jq.each(function() {
                 sinaWeibo(this, options);
