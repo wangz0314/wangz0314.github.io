@@ -129,8 +129,8 @@
         //window.open(replaceAPI(weixin, $.extend({}, $.fn.socialShare.defaults, options)));
         $("#ewmDiv").empty();
         $("#ewmDiv").qrcode({
-            width: 48,
-            height: 48,
+            width: 100,
+            height: 100,
             text: window.location.href
         });
         $("#wemcn").css({
@@ -170,11 +170,11 @@
                 tQQ(this, options);
             })
         },
-        qZone: function(jq, options) {
+/*        qZone: function(jq, options) {
             return jq.each(function() {
                 qZone(this, options);
             })
-        },
+        },*/
         sinaWeibo: function(jq, options) {
             return jq.each(function() {
                 sinaWeibo(this, options);
@@ -194,7 +194,7 @@
 
 
     //分享地址
-    var qzone = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}&title={title}&pics={pic}&summary={content}';
+    var qzone = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}&title={title}&pics={pic}';
     var sina = 'http://service.weibo.com/share/share.php?url={url}&title={title}&pic={pic}&searchPic=false';
     var tqq = 'http://share.v.t.qq.com/index.php?c=share&a=index&url={url}&title={title}&appkey=801cf76d3cfc44ada52ec13114e84a96';
     var douban = 'http://www.douban.com/share/service?href={url}&name={title}&text={content}&image={pic}';
