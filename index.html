@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="6fea7fc7276fc383ec5b2080c662f076"/>
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Wangz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
@@ -19,29 +19,33 @@
     <link rel="alternative" href="/atom.xml" title="Wangz" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/leaves.ico">
   
   <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://kiritor.github.io/js/jquery1.8.2.min.js"></script>
+  <script src="http://kiritor.github.io/js/jquery.nicescroll.js"></script>
+  <script src="http://kiritor.github.io/js/jquery.qrcode.min.js"></script>
+  <script src="/js/ug-theme-default.js"></script>
+  <script src="/js/unitegallery.js"></script>
 </head>
 
 <body>
+
   <div id="container">
     <div class="left-col">
     <div class="overlay"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			
-			<img lazy-src="null" class="js-avatar">
-			
+			<img src="http://kiritor.github.io/img/lcore.jpg" class="js-avatar">
 		</a>
 
 		<hgroup>
-		  <h1 class="header-author"><a href="/">WangZhao</a></h1>
+		  <h1 class="header-author"><a href="/" class="alluraregular">WangZhao</a></h1>
 		</hgroup>
-
+        <!--
 		
-
+        -->
 		
 			<div class="switch-btn">
 				<div class="icon">
@@ -66,18 +70,18 @@
 						</div>
 						
 					</div>
-					
+
 				</div>
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
 						<li>菜单</li>
-						<li>標籤</li>
+						<li>标签</li>
 						
 						<li>友情链接</li>
 						
 						
-						<li>關於</li>
+						<li>关于我</li>
 						
 					</ul>
 				</div>
@@ -90,9 +94,13 @@
 					<nav class="header-menu">
 						<ul>
 						
-							<li><a href="/">主页</a></li>
+							<li><a href="/">主 页</a></li>
 				        
 							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/work">Work</a></li>
+				        
+							<li><a href="/categories/Linux">Linux</a></li>
 				        
 						</ul>
 					</nav>
@@ -108,30 +116,20 @@
 						</div>
 					</nav>
 				</section>
-				
+
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a>
 					</div>
 				</section>
 				
-				
+
 				
 				<section class="switch-part switch-part3">
 					<div id="js-friends">
 					
 			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
 			        
 			        </div>
 				</section>
@@ -141,12 +139,12 @@
 				
 				<section class="switch-part switch-part4">
 				
-					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+					<div id="js-aboutme">乐于分享,喜欢环境音乐,爱看动漫,偶尔写写技术博客的小程一枚...</div>
 				</section>
 				
 			</div>
 		</div>
-	</header>				
+	</header>
 </div>
 
     </div>
@@ -159,20 +157,22 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-			
-				<img lazy-src="null" class="js-avatar">
-			
+				<img src="http://kiritor.github.io/img/lcore.jpg" class="js-avatar">
+				<hgroup>
+				  <h1 class="header-author">WangZhao</h1>
+				</hgroup>
 			</div>
-			<hgroup>
-			  <h1 class="header-author">WangZhao</h1>
-			</hgroup>
 			
 			<nav class="header-menu">
 				<ul>
 				
-					<li><a href="/">主页</a></li>
+					<li><a href="/">主 页</a></li>
 		        
 					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/work">Work</a></li>
+		        
+					<li><a href="/categories/Linux">Linux</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -188,100 +188,215 @@
 			        
 				</div>
 			</nav>
-		</header>				
+		</header>
 	</div>
 </nav>
 
-      <div class="body-wrap">
+	  <!--是否开启最近通知-->
+	  
+      <div class="body-wrap"><!-- 是否开启微简历 -->
+
+      <div class="resume" id="resume">
+    <ul id="centerwell">
+        <li id="aboutMe">
+            <h3></h3>
+            <div>
+                <h2 style="margin-top:10px;">About Me</h2>
+                <label>姓名:L.Tao</label>
+                <label>出生日期:1991/02/27</label>
+                <label style="margin-right:20px">电话:188832519XX</label>
+                </br>
+                <label style="margin-right:20px">学校:西南大学 计算机科学与技术</label>
+                <label>邮件:1406754158@qq.com</label>
+                <label>Website:<a href="http://kiritor.github.io">kiritor.github.io</a>
+                </label>
+            </div>
+
+        </li>
+        <li id="work">
+            <h3></h3>
+            <div>
+                <h2 style="margin-top:10px;">兴趣爱好</h2>
+                <label>程序员一枚,爱好开源,喜欢瞎折腾.</label>
+                </br>
+                <label>成长中的全栈开发者,什么都会,什么也不会.</label>
+                </br>
+                <label>宅,业余生活逃不开写代码,听音乐,看动漫,打Dota.</label>
+            </div>
+
+        </li>
+        <li id="close" style="float:right;width:40px;">
+            <a class="ck-prev" href="javascript:;">上一张</a>
+        </li>
+    </ul>
+    <script>
+        $(document).ready(function() {
+            var $centerwell_first = $('#centerwell li:first');
+            /* $centerwell_first.animate({
+            width: '400px'
+        }, 300);
+        $centerwell_first.find('h3').animate({}, 300);
+       */
+            /*'#centerwell li').click(function() {
+            window.open($(this).find('a').attr('href'));
+        });
+        */
+            $('#centerwell li').mouseenter(function() {
+                if (!$(this).is(':animated') && $(this).attr("id") != "close") {
+                    $(this).animate({
+                        width: '600'
+                    }, 300).siblings().not("#close").animate({
+                        width: '140px'
+                    }, 300);
+
+                    $(this).find('h3').animate({
+                        backgroundPosition: '-140px'
+                    }, 300).parent().siblings().find('h3').animate({
+                        backgroundPosition: '0px'
+                    }, 300);
+                }
+
+            });
+            $("#close").mouseenter(function() {
+                $('#centerwell li:not(#close)').animate({
+                    width: '140px'
+                }, 300);
+                $('#centerwell li:not(#close)').find("h3").animate({
+                    backgroundPosition: '0px'
+                }, 300);
+            });
+        });
+    </script>
+</div>
+
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/29/hello-world/" class="article-date">
-  	<time datetime="2016-06-29T08:25:49.361Z" itemprop="datePublished">2016-06-29</time>
+    <script>
+        $("html").niceScroll({
+            cursorcolor: "#2a2929",
+            cursoropacitymax: 1,
+            touchbehavior: false,
+            cursorwidth: "6px",
+            cursorborder: "5",
+            cursorborderradius: "0px",
+            autohidemode: true
+        });
+    </script>
+    
+        <div class="article-meta">
+            <a href="/2016/06/30/hello-world/" class="article-date">
+  	<time datetime="2016-06-30T07:32:33.636Z" itemprop="datePublished">2016-06-30</time>
 </a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+        </div>
         
+            <div class="article-inner">
+                
+                    <input type="hidden" class="isFancy" />
+                    
+                        
+                            <header class="article-header">
+                                
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/29/hello-world/">Hello World</a>
+      <a class="article-title" href="/2016/06/30/hello-world/">Hello World</a>
     </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+
+                            </header>
+                            
+                                    
+                                        <div class="article-entry" itemprop="articleBody">
+                                            
+
+                                                
+                                                                
+                                                                    <p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a><br></p>
+                                                                        
+                                        </div>
+                                        
+                                            <div class="article-info article-info-index">
+                                                
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
+                                                    
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/work/">work</a>
+	</div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
+
+                                                        
+                                                            <p class="article-more-link">
+                                                                <a  href="/2016/06/30/hello-world/#more">More >></a>
+                                                            </p>
+                                                            
+                                                                <div class="clearfix"></div>
+                                            </div>
+                                            
+            </div>
+            
+                    
+                                <!-- 多说评论框 start -->
+                                
 </article>
 
+<!--
 
+-->
+<!--
 
-
-
-
-
-
+-->
 
   
     <article id="post-内存寻址" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/29/内存寻址/" class="article-date">
+    <script>
+        $("html").niceScroll({
+            cursorcolor: "#2a2929",
+            cursoropacitymax: 1,
+            touchbehavior: false,
+            cursorwidth: "6px",
+            cursorborder: "5",
+            cursorborderradius: "0px",
+            autohidemode: true
+        });
+    </script>
+    
+        <div class="article-meta">
+            <a href="/2016/06/29/内存寻址/" class="article-date">
   	<time datetime="2016-06-29T08:12:07.000Z" itemprop="datePublished">2016-06-29</time>
 </a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+        </div>
         
+            <div class="article-inner">
+                
+                    <input type="hidden" class="isFancy" />
+                    
+                        
+                            <header class="article-header">
+                                
   
     <h1 itemprop="name">
       <a class="article-title" href="/2016/06/29/内存寻址/">内存寻址</a>
     </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="u4E00_u3001_u7269_u7406_u5730_u5740_u3001_u7EBF_u6027_u5730_u5740_u3001_u865A_u62DF_u5730_u5740"><a href="#u4E00_u3001_u7269_u7406_u5730_u5740_u3001_u7EBF_u6027_u5730_u5740_u3001_u865A_u62DF_u5730_u5740" class="headerlink" title="&#x4E00;&#x3001;&#x7269;&#x7406;&#x5730;&#x5740;&#x3001;&#x7EBF;&#x6027;&#x5730;&#x5740;&#x3001;&#x865A;&#x62DF;&#x5730;&#x5740;"></a>&#x4E00;&#x3001;&#x7269;&#x7406;&#x5730;&#x5740;&#x3001;&#x7EBF;&#x6027;&#x5730;&#x5740;&#x3001;&#x865A;&#x62DF;&#x5730;&#x5740;</h3><h4 id="1-__u57FA_u672C_u6982_u5FF5"><a href="#1-__u57FA_u672C_u6982_u5FF5" class="headerlink" title="1. &lt;strong&gt;&#x57FA;&#x672C;&#x6982;&#x5FF5;&lt;/strong&gt;"></a>1. <strong>&#x57FA;&#x672C;&#x6982;&#x5FF5;</strong></h4><ul>
+
+                            </header>
+                            
+                                    
+                                        <div class="article-entry" itemprop="articleBody">
+                                            
+
+                                                
+                                                                
+                                                                    <h3 id="u7269_u7406_u5730_u5740_u3001_u7EBF_u6027_u5730_u5740_u3001_u865A_u62DF_u5730_u5740"><a href="#u7269_u7406_u5730_u5740_u3001_u7EBF_u6027_u5730_u5740_u3001_u865A_u62DF_u5730_u5740" class="headerlink" title="&#x7269;&#x7406;&#x5730;&#x5740;&#x3001;&#x7EBF;&#x6027;&#x5730;&#x5740;&#x3001;&#x865A;&#x62DF;&#x5730;&#x5740;"></a>&#x7269;&#x7406;&#x5730;&#x5740;&#x3001;&#x7EBF;&#x6027;&#x5730;&#x5740;&#x3001;&#x865A;&#x62DF;&#x5730;&#x5740;</h3><h4 id="u57FA_u672C_u6982_u5FF5"><a href="#u57FA_u672C_u6982_u5FF5" class="headerlink" title="&lt;strong&gt;&#x57FA;&#x672C;&#x6982;&#x5FF5;&lt;/strong&gt;"></a><strong>&#x57FA;&#x672C;&#x6982;&#x5FF5;</strong></h4><ul>
 <li><strong>&#x7269;&#x7406;&#x5730;&#x5740;</strong><br>&#x7269;&#x7406;&#x5185;&#x5B58;&#x6761;&#x63D0;&#x4F9B;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x5B9A;&#x4E49;&#x4E3A;<strong>&#x7269;&#x7406;&#x5185;&#x5B58;&#x7A7A;&#x95F4;</strong>&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E2A;&#x5185;&#x5B58;&#x5355;&#x5143;&#x7684;&#x5B9E;&#x9645;&#x5730;&#x5740;&#x5C31;&#x662F;<strong>&#x7269;&#x7406;&#x5730;&#x5740;</strong>&#x3002;</li>
 <li><strong>&#x865A;&#x62DF;&#x5730;&#x5740;</strong></li>
 </ul>
@@ -289,39 +404,63 @@
 <ul>
 <li><strong>&#x7EBF;&#x6027;&#x5730;&#x5740;</strong><br><strong>&#x7EBF;&#x6027;&#x5730;&#x5740;&#x7A7A;&#x95F4;</strong>&#x662F;&#x6307;&#x4E00;&#x6BB5;&#x8FDE;&#x7EED;&#x7684;&#x3001;&#x4E0D;&#x5206;&#x6BB5;&#x7684;&#xFF0C;&#x8303;&#x56F4;&#x4ECE;0~4GB&#x7684;&#x5730;&#x5740;&#x7A7A;&#x95F4;&#xFF0C;&#x4E00;&#x4E2A;<strong>&#x7EBF;&#x6027;&#x5730;&#x5740;</strong>&#x5C31;&#x662F;&#x7EBF;&#x6027;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x3002;</li>
 </ul>
-<h4 id="2-__u4E09_u8005_u4E4B_u95F4_u7684_u8F6C_u6362"><a href="#2-__u4E09_u8005_u4E4B_u95F4_u7684_u8F6C_u6362" class="headerlink" title="2. &lt;strong&gt;&#x4E09;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&lt;/strong&gt;"></a>2. <strong>&#x4E09;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;</strong></h4><p>&#x8F6C;&#x6362;&#x6D41;&#x7A0B;&#xFF1A;<br><img src="/2016/06/29/&#x5185;&#x5B58;&#x5BFB;&#x5740;/mem_addr_01.png" alt="MMU&#x5C06;&#x865A;&#x62DF;&#x5730;&#x5740;&#x8F6C;&#x6362;&#x4E3A;&#x7269;&#x7406;&#x5730;&#x5740;"><br><strong>MMU</strong> &#x5185;&#x5B58;&#x7BA1;&#x7406;&#x5355;&#x5143;&#xFF0C;&#x5176;&#x529F;&#x80FD;&#x662F;&#x5C06; &#x865A;&#x62DF;&#x5730;&#x5740; &#x6620;&#x5C04;&#x4E3A; &#x7269;&#x7406;&#x5730;&#x5740;&#xFF0C;&#x5373;&#x8FDB;&#x884C;&#x5730;&#x5740;&#x8F6C;&#x6362;&#xFF0C;&#x5982;&#x56FE;1&#x6240;&#x793A;&#x3002;<br>MMU&#x4E2D;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x90E8;&#x4EF6;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x5206;&#x6BB5;&#x673A;&#x5236;&#x3001;&#x4E00;&#x4E2A;&#x662F;&#x5206;&#x9875;&#x673A;&#x5236;&#x3002;&#x5206;&#x6BB5;&#x673A;&#x5236;&#x5C06;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x5730;&#x5740;&#x8F6C;&#x6362;&#x4E3A;&#x7EBF;&#x6027;&#x5730;&#x5740;&#xFF1B;&#x5206;&#x9875;&#x673A;&#x5236;&#x5C06;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x5730;&#x5740;&#x8F6C;&#x6362;&#x4E3A;&#x7269;&#x7406;&#x5730;&#x5740;&#x3002;<br></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
+<h4 id="u4E09_u8005_u4E4B_u95F4_u7684_u8F6C_u6362"><a href="#u4E09_u8005_u4E4B_u95F4_u7684_u8F6C_u6362" class="headerlink" title="&lt;strong&gt;&#x4E09;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&lt;/strong&gt;"></a><strong>&#x4E09;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;</strong></h4><p>&#x8F6C;&#x6362;&#x6D41;&#x7A0B;&#xFF1A;<br><img src="/2016/06/29/&#x5185;&#x5B58;&#x5BFB;&#x5740;/mem_addr_01.png" alt="MMU&#x5C06;&#x865A;&#x62DF;&#x5730;&#x5740;&#x8F6C;&#x6362;&#x4E3A;&#x7269;&#x7406;&#x5730;&#x5740;"><br><strong>MMU</strong> &#x5185;&#x5B58;&#x7BA1;&#x7406;&#x5355;&#x5143;&#xFF0C;&#x5176;&#x529F;&#x80FD;&#x662F;&#x5C06; &#x865A;&#x62DF;&#x5730;&#x5740; &#x6620;&#x5C04;&#x4E3A; &#x7269;&#x7406;&#x5730;&#x5740;&#xFF0C;&#x5373;&#x8FDB;&#x884C;&#x5730;&#x5740;&#x8F6C;&#x6362;&#xFF0C;&#x5982;&#x56FE;1&#x6240;&#x793A;&#x3002;<br>MMU&#x4E2D;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x90E8;&#x4EF6;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x5206;&#x6BB5;&#x673A;&#x5236;&#x3001;&#x4E00;&#x4E2A;&#x662F;&#x5206;&#x9875;&#x673A;&#x5236;&#x3002;&#x5206;&#x6BB5;&#x673A;&#x5236;&#x5C06;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x5730;&#x5740;&#x8F6C;&#x6362;&#x4E3A;&#x7EBF;&#x6027;&#x5730;&#x5740;&#xFF1B;&#x5206;&#x9875;&#x673A;&#x5236;&#x5C06;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x5730;&#x5740;&#x8F6C;&#x6362;&#x4E3A;&#x7269;&#x7406;&#x5730;&#x5740;&#x3002;<br></p>
+                                                                        
+                                        </div>
+                                        
+                                            <div class="article-info article-info-index">
+                                                
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/内存/">内存</a></li></ul>
+	</div>
 
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/29/内存寻址/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
+
+                                                    
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Linux/">Linux</a>
+	</div>
+
+
+                                                        
+                                                            <p class="article-more-link">
+                                                                <a  href="/2016/06/29/内存寻址/#more">More >></a>
+                                                            </p>
+                                                            
+                                                                <div class="clearfix"></div>
+                                            </div>
+                                            
+            </div>
+            
+                    
+                                <!-- 多说评论框 start -->
+                                
 </article>
 
+<!--
 
+-->
+<!--
 
-
-
-
-
-
+-->
 
   
   
+
+
+
+<script>
+
+    $(function(){
+	    var width = document.body.scrollWidth;
+		if(width<=550){
+		    $("#recentComments").css("display","none");
+		}
+	})
+
+</script>
 </div>
-      <footer id="footer">
+      <!--
+<footer id="footer">
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
@@ -331,33 +470,32 @@
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>
     </div>
+  <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','m5RW4BUQrJ_r-CYKAksH','2.0.0');
+</script>
   </div>
 </footer>
+-->
     </div>
     
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
 
 
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: true,
-		isPost: false,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/mobile.js" type="text/javascript"></script>
 <script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/prefixfree.js" type="text/javascript"></script>
 
 
 
 
 
+<! -- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -371,14 +509,23 @@ MathJax.Hub.Config({
 MathJax.Hub.Queue(function() {
     var all = MathJax.Hub.getAllJax(), i;
     for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
 });
 </script>
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;z-index:9999;opacity: 100%;">
+    <a title="返回顶部" style="opacity: 100%;">
+        <img src="/img/scrollup.png" />
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/share.js"></script>
 
   </div>
 </body>
